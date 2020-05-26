@@ -1,6 +1,6 @@
 class BookingsController < ApplicationController
-  before_action :set_booking, only: [:edit, :update, :delete]
-
+   before_action :set_booking, only: [:edit, :update, :delete]
+  
   def show
     @booking = bike.find(params[:id])
   end
