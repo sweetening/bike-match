@@ -11,12 +11,12 @@ class BikesController < ApplicationController
     end
   end
 
-  private
+#   private
 
-   # strong params
-  def bikes_params
-    params.require(:bike).permit(:type, :location, :price, :title, :image_url,
-    :user_id, :lat, :long)
-  end
-end
+#    # strong params
+#   def bikes_params
+#     params.require(:bike).permit(:type, :location, :price, :title, :image_url,
+#     :user_id, :lat, :long)
+#   end
+# end
 
