@@ -1,4 +1,12 @@
 class BikesController < ApplicationController
+  before_action :set_bike, only: [:show, :edit, :update]
+
+  def index
+    @bikes = Bike.all
+  end
+  
+  def show; end
+  
   def new
     @bike = Bike.new
   end
@@ -7,16 +15,29 @@ class BikesController < ApplicationController
     @bike = Bike.new(bike_params)
     @bike.user = current_user
     if @bike.save!
-      redirect_to root_path
+      redirect_to bike_path(@bike)
     else
       render :new
     end
   end
+  
+  def edit; end
 
+  def update
+    if @bike.update(bike_params)
+      redirect_to bike_path(@bike)
+    else
+      render :edit
+    end
+  end
+  
   private
 
-  def bike_params
-    params.require(:bike).permit(:title, :type, :location, :price, :image_url, :lat, :long, :user_id)
+  def set_bike
+    @bike = Bike.find(params[:id])
   end
 
+  def bike_params
+    params.require(:bike).permit(:category, :location, :price, :title, :image_url, :lat, :long)
+  end
 end
