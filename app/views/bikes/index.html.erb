@@ -1,7 +1,10 @@
-<h1>Bikes</h1>
+<div class="container mt-5">
+  <h1 class="title">Bikes</h1>
+  <p class="text-right">add a bike <span><%= link_to "<i class='fas fa-plus'></i>".html_safe, new_bike_path %></span></p>
 
-<ul>
-  <% @bikes.each do |bike|%>
-    <li><%= link_to bike.title, bike_path(bike) %></li>
-  <% end %>
-</ul>
+  <ul>
+    <% @bikes.each do |bike|%>
+      <li><%= link_to bike.title, bike_path(bike) %></li>
+    <% end %>
+  </ul>
+</div>
