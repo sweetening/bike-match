@@ -1,12 +1,12 @@
 class BikesController < ApplicationController
-  before_action :set_bike, only: [:show, :edit, :update]
+  before_action :set_bike, only: [:show, :edit, :update, :delete]
 
   def index
     @bikes = Bike.all
   end
-  
+
   def show; end
-  
+
   def new
     @bike = Bike.new
   end
@@ -20,7 +20,7 @@ class BikesController < ApplicationController
       render :new
     end
   end
-  
+
   def edit; end
 
   def update
@@ -30,7 +30,12 @@ class BikesController < ApplicationController
       render :edit
     end
   end
-  
+
+  def delete
+    @bike.destroy
+    redirect_to bikes_path
+  end
+
   private
 
   def set_bike
