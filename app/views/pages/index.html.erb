@@ -2,7 +2,7 @@
 
 <ul>
   <% @bikes.each do |bike|%>
-    <li><%= link_to bike.category, bike_path(bike) %></li>
+    <li><%= link_to bike.title, bike_path(bike) %></li>
   <% end %>
 </ul>
 
