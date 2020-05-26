@@ -1,0 +1,13 @@
+<div class="container">
+  <%= simple_form_for [ @booking, @bike ] do |f| %>
+    <%= f.input :total_price %>
+    <%= f.input :start_date %>
+    <%= f.input :edit_date %>
+    <%= f.submit "Edit booking", class: "btn btn-primary" %>
+  <% end %>
+  <%= link_to "Delete #{@booking.start_date}",
+            bike_path(@booking),
+            method: :delete,
+            data: { confirm: "Are you sure?" } %>
+  <%= link_to 'Back', bikes_path %>
+</div>
