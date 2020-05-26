@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_25_144812) do
+ActiveRecord::Schema.define(version: 2020_05_26_102437) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -24,6 +24,8 @@ ActiveRecord::Schema.define(version: 2020_05_25_144812) do
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "lat"
+    t.integer "long"
     t.index ["user_id"], name: "index_bikes_on_user_id"
   end
 
@@ -33,16 +35,19 @@ ActiveRecord::Schema.define(version: 2020_05_25_144812) do
     t.bigint "bike_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.date "start_date"
+    t.date "end_date"
+    t.integer "total_price"
     t.index ["bike_id"], name: "index_bookings_on_bike_id"
     t.index ["user_id"], name: "index_bookings_on_user_id"
   end
 
   create_table "reviews", force: :cascade do |t|
     t.text "content"
-    t.integer "raiting"
     t.bigint "booking_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "rating"
     t.index ["booking_id"], name: "index_reviews_on_booking_id"
   end
 
@@ -54,6 +59,8 @@ ActiveRecord::Schema.define(version: 2020_05_25_144812) do
     t.datetime "remember_created_at"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "user_name"
+    t.string "avatar"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
