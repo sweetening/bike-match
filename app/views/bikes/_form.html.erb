@@ -1,0 +1,10 @@
+<div class="container">
+  <%= simple_form_for [ @bike ] do |f| %>
+    <%= f.input :title %>
+    <%= f.input :category, collection: ["Dutch", "Electric", "Racing", "BMX", "Road", "Mountain", "Tandem", "Cruiser", "Single Speed", "Track"] %>
+    <%= f.input :location %>
+    <%= f.input :price %>
+    <%= f.input :image_url %>
+    <%= f.submit "Add bike", class: "btn btn-primary" %>
+  <% end %>
+</div>

@@ -1,10 +1,25 @@
 class BikesController < ApplicationController
   before_action :set_bike, only: [:show, :edit, :update]
+
   def index
     @bikes = Bike.all
   end
   
   def show; end
+  
+  def new
+    @bike = Bike.new
+  end
+
+  def create
+    @bike = Bike.new(bike_params)
+    @bike.user = current_user
+    if @bike.save!
+      redirect_to bike_path(@bike)
+    else
+      render :new
+    end
+  end
   
   def edit; end
 
