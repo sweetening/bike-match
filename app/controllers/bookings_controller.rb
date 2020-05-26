@@ -1,10 +1,6 @@
 class BookingsController < ApplicationController
    before_action :set_booking, only: [:edit, :update, :delete]
   
-  def index
-    @bookings = Booking.all
-  end
-  
   def show
     @booking = bike.find(params[:id])
   end 
