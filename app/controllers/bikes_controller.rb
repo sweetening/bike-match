@@ -4,9 +4,9 @@ class BikesController < ApplicationController
   def index
     @bikes = Bike.all
   end
-  
+
   def show; end
-  
+
   def new
     @bike = Bike.new
   end
@@ -20,7 +20,7 @@ class BikesController < ApplicationController
       render :new
     end
   end
-  
+
   def edit; end
 
   def update
@@ -30,7 +30,12 @@ class BikesController < ApplicationController
       render :edit
     end
   end
-  
+
+  def destroy
+    @bike.destroy
+    redirect_to bike_path(@bike)
+  end
+
   private
 
   def set_bike
