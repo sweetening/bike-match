@@ -1,8 +1,22 @@
 <div class="container">
-  <h1>Show Page</h1>
+  <p class="text-right mt-5">Edit this bike <span><%= link_to "<i class='fas fa-pencil-alt'></i>".html_safe, edit_bike_path %></span></p>
 
-  <%= @bike.title %>
-  <%= @bike.price %>
-  <%= @bike.category %>
-
+  <div class="d-flex justify-content-center align-items-center">
+    <div class="card mt-2" style="width: 18rem;">
+      <div class="card-category" style="background-image: url(<%= @bike.image_url %>)">
+      </div>
+      <div class="card-body">
+        <h5 class="card-title"><%= @bike.title %></h5>
+        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+      </div>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item">Price: <%= @bike.price %></li>
+        <li class="list-group-item">Type of Bike: <%= @bike.category %></li>
+        <li class="list-group-item">Location: <%= @bike.location %></li>
+      </ul>
+      <div class="card-body">
+        <%= link_to "Book this bike now!", new_bike_booking_path(@bike), class: "card-link" %>
+      </div>
+    </div>
+  </div>
 </div>
