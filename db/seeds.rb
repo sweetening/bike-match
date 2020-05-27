@@ -33,7 +33,7 @@ puts 'creating bikes'
     location: Faker::Address.city,
     price: rand(10..30),
     title: Faker::App.name,
-    image_url: "https://source.unsplash.com/500x400/?bicycle",
+    image_url: "",
     user: user,
     longitude: Faker::Address.longitude,
     latitude: Faker::Address.latitude,

@@ -2,17 +2,17 @@
   <h1 class="title">Bikes</h1>
   <p class="text-right">add a bike <span><%= link_to "<i class='fas fa-plus'></i>".html_safe, new_bike_path %></span></p>
 
-<div class="card-columns card-deck cards_d">
-  <% @bikes.each do |bike| %>
-  <div class="card">
-    <div class="card-category_pic" style="background-image: url(<%= bike.image_url %>)">
-    </div>
-    <div class="card-body">
-      <h5 class="card-title"><%= link_to bike.title, bike_path(bike) %></h5>
-      <p class="card-text">Bike Category: <%= bike.category %></p>
-      <p class="card-text">Location: <%= bike.location %></p>
-      <p class="card-text">Price: $<%= bike.price %></p>
-      <p class="card-text"><small class="text-muted">bike-match ❤️</small></p>
+  <div class="row row-cols-1 row-cols-md-3">
+    <% @bikes.each do |bike| %>
+      <div class="card mt-1 mb-1">
+        <div class="card-category_pic" style="background-image: url(<%= bike.image_url %>)">
+          </div>
+          <div class="card-body">
+            <h5 class="card-title"><%= link_to bike.title, bike_path(bike) %></h5>
+            <p class="card-text">Bike Category: <%= bike.category %></p>
+            <p class="card-text">Location: <%= bike.location %></p>
+            <p class="card-text">Price: $<%= bike.price %></p>
+            <p class="card-text"><small class="text-muted">bike-match ❤️</small></p>
     </div>
   </div>
   <% end %>
