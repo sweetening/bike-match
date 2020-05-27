@@ -1,13 +1,13 @@
-// .card-category {
-//   background-size: cover;
-//   background-position: center;
-//   height: 180px;
-//   width: 180px;
-//   display: flex;
-//   justify-content: center;
-//   align-items: center;
-//   color: white;
-// }
+.card-category_pic {
+  background-size: cover;
+  background-position: center;
+  height: 180px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  object-fit: cover;
+}
 
 .card-img-top {
   height: 250px;
