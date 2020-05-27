@@ -1,0 +1,35 @@
+<div class="container mt-5">
+  <h1 class="title">Dashboard</h1>
+  <p>See all your bookings!</p>
+
+  <% if user_signed_in? %>
+    <p>Hi, you are: <%= current_user.email %></p>
+    <p>Here are your bookings:</p>
+    <ul>
+      <div class="cards_d">
+      <% @my_bookings = @bookings.select do |booking| %>
+        <% booking.user == current_user %>
+      <% end %>
+    <% @my_bookings.each do |my_booking| %>
+      <li>
+        <div class="card" style="width: 18rem;">
+          <div class="card-category" style="background-image: url(<%= my_booking.bike.image_url %>)">
+          </div>
+          <div class="card-body">
+            <h5 class="card-title"><%= my_booking.bike.title %></h5>
+            <p class="card-text"></p>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item">Start Date: <%= my_booking.start_date %></li>
+              <li class="list-group-item">End Date: <%= my_booking.end_date %></li>
+              <li class="list-group-item">Total Price: <%= my_booking.total_price %></li>
+            </ul>
+          </div>
+        </div>
+      </li>
+      <% end %>
+     </div>
+    </ul>
+  <% else %>
+    <p>Sorry you are not signed- please sign in to see your bookings!</p>
+  <% end %>
+</div>

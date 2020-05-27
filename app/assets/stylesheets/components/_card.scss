@@ -65,3 +65,10 @@
     grid-template-columns: 1fr 1fr 1fr;
   }
 }
+
+.cards_d {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
