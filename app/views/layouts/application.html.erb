@@ -4,7 +4,7 @@
     <title>BikeMatch</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&family=Shrikhand&display=swap" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
 
@@ -14,7 +14,7 @@
   <body>
     <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
       <a class="navbar-brand" href="#">
-        <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/logo.png" />
+        <img src="https://static.thenounproject.com/png/1026671-200.png" />
     </a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -30,7 +30,7 @@
             <%= link_to "Bikes", bikes_path, class: "nav-link" %>
           </li>
           <li class="nav-item dropdown">
-            <img class="avatar dropdown-toggle" id="navbarDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" src="https://kitt.lewagon.com/placeholder/users/ssaunier" />
+            <img class="avatar dropdown-toggle" id="navbarDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" src="https://thumbor.forbes.com/thumbor/fit-in/416x416/filters%3Aformat%28jpg%29/https%3A%2F%2Fspecials-images.forbesimg.com%2Fimageserve%2F5e6e696937d0440006bc7c4c%2F0x0.jpg%3Fbackground%3D000000%26cropX1%3D0%26cropX2%3D3430%26cropY1%3D103%26cropY2%3D3535" />
             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                <%= link_to "sign in", new_user_session_path, class: "dropdown-item" %>
                <%= link_to "sign out", destroy_user_session_path, class: "dropdown-item" %>
@@ -40,22 +40,49 @@
       </div>
     </div>
 
+    <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.pexels.com/photos/163704/bike-old-wheel-two-wheeled-vehicle-163704.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500);">
+    <div class="container">
+      <h1>Whatever your need is, find a bike that fits you!</h1>
+    </div>
+    </div>
+
+    <div class="card-group">
+    <div class="card">
+      <img src="https://images.pexels.com/photos/2591990/pexels-photo-2591990.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">Mountain bike</h5>
+        <p class="card-text">Berlin Kreuzberg - 12€ - Available now</p>
+      </div>
+    </div>
+    <div class="card">
+      <img src="https://images.pexels.com/photos/957157/pexels-photo-957157.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">Cargo bike</h5>
+        <p class="card-text">Berlin Neukölln - 20€ - Available now</p>
+      </div>
+    </div>
+    <div class="card">
+      <img src="https://images.pexels.com/photos/545004/pexels-photo-545004.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">Road bike</h5>
+        <p class="card-text">Berlin Mitte - 10€ - Available now</p>
+      </div>
+    </div>
+  </div>
+
       <%= yield %>
     </div>
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
-  <!-- footer from le-wagon it wont stick to bottom so commmeted out for now -->
-<!--     <div class="footer">
+ <div class="footer">
       <div class="footer-links">
-        <a href="#"><i class="fab fa-github"></i></a>
         <a href="#"><i class="fab fa-instagram"></i></a>
         <a href="#"><i class="fab fa-facebook"></i></a>
         <a href="#"><i class="fab fa-twitter"></i></a>
-        <a href="#"><i class="fab fa-linkedin"></i></a>
       </div>
       <div class="footer-copyright">
-        This footer is made with <i class="fas fa-heart"></i> at Le Wagon
+        Made with <i class="fas fa-heart"></i> at Bike Match 2020
       </div>
-    </div> -->
+    </div>
   </body>
 </html>
