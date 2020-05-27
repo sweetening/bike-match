@@ -13,7 +13,7 @@
     <% @my_bookings.each do |my_booking| %>
       <li>
         <div class="card" style="width: 18rem;">
-          <div class="card-category" style="background-image: url(<%= my_booking.bike.image_url %>)">
+          <div class="card-category_pic" style="background-image: url(<%= my_booking.bike.image_url %>)">
           </div>
           <div class="card-body">
             <h5 class="card-title"><%= my_booking.bike.title %></h5>
@@ -21,7 +21,7 @@
             <ul class="list-group list-group-flush">
               <li class="list-group-item">Start Date: <%= my_booking.start_date %></li>
               <li class="list-group-item">End Date: <%= my_booking.end_date %></li>
-              <li class="list-group-item">Total Price: <%= my_booking.total_price %></li>
+              <li class="list-group-item">Total Price: $<%= my_booking.total_price %></li>
             </ul>
           </div>
         </div>
