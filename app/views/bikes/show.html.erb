@@ -1,5 +1,9 @@
 <div class="container">
-  <p class="text-right mt-5">Edit this bike <span><%= link_to "<i class='fas fa-pencil-alt'></i>".html_safe, edit_bike_path %></span></p>
+  <% if @bike.user_id == current_user.id %>
+    <p class="text-right mt-5">Edit this bike <span><%= link_to "<i class='fas fa-pencil-alt'></i>".html_safe, edit_bike_path %></span></p>
+  <% else %>
+    <div class="mb-5"></div>
+  <% end %>
 
   <div class="d-flex justify-content-center align-items-center">
     <div class="card mt-2" style="width: 18rem;">
