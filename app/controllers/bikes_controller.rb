@@ -1,8 +1,16 @@
 class BikesController < ApplicationController
-  before_action :set_bike, only: [:show, :edit, :update, :destroy]
+  before_action :set_bike, only: [:show, :edit, :update, :destroy, :address]
 
   def index
-    @bikes = Bike.all
+    @bikes= Bike.geocoded # returns flats with coordinates
+
+    @markers = @bikes.map do |bike|
+      {
+        lat: bike.latitude,
+        lng: bike.longitude,
+        infoWindow: render_to_string(partial: "info_window", locals: { bike: bike })
+      }
+    end
   end
 
   def show; end
@@ -21,7 +29,9 @@ class BikesController < ApplicationController
     end
   end
 
-  def edit; end
+  def edit;
+  @bike = Bike.find(params[:id])
+  end
 
   def update
     if @bike.update(bike_params)
@@ -44,6 +54,6 @@ class BikesController < ApplicationController
   end
 
   def bike_params
-    params.require(:bike).permit(:category, :location, :price, :title, :lat, :long, photos: [])
+    params.require(:bike).permit(:category, :location,  :address, :price, :title, :lat, :long, photos: [])
   end
 end
