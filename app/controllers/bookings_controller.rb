@@ -1,5 +1,5 @@
 class BookingsController < ApplicationController
-   before_action :set_booking, only: [:edit, :update, :delete]
+   before_action :set_booking, only: [:edit, :update, :destroy]
 
   def show
     @booking = Booking.find(params[:id])
@@ -24,7 +24,7 @@ class BookingsController < ApplicationController
     end
   end
 
-  def edit;end
+  def edit; end
 
   def update
     @bike = Bike.find(params[:bike_id])
@@ -33,7 +33,7 @@ class BookingsController < ApplicationController
     redirect_to dashboard_index_path
   end
 
- def delete
+ def destroy
     @booking = Booking.find(params[:id])
     @bike = Bike.find(@booking.bike_id)
     @booking.destroy
@@ -47,6 +47,6 @@ class BookingsController < ApplicationController
   end
 
   def booking_params
-    params.require(:booking).permit(:start_date, :end_date, :total_price) 
+    params.require(:booking).permit(:start_date, :end_date, :total_price)
   end
 end

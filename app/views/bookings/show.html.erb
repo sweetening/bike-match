@@ -1,9 +1,11 @@
+<div class= box>
 <div class="container mt-5" >
   <h1 class="title">Booking Confirmation</h1>
-    <p>Your User Id is: <%= @booking.user_id %></p>
+    
     <p>Start Date is:   <%= @booking.start_date %></p>
     <p>End Date is:     <%= @booking.end_date %></p>
     <p>Open Balance:    <%= number_to_currency @booking.total_price %></p>
   
  <%= link_to "See all your bookings 🚲", dashboard_index_path(@bike), class: "btn btn-primary" %>
+</div>
 </div>
