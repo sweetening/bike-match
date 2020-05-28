@@ -24,7 +24,7 @@ class BookingsController < ApplicationController
     end
   end
 
-  def edit;end
+  def edit; end
 
   def update
     @bike = Bike.find(params[:bike_id])
@@ -47,6 +47,6 @@ class BookingsController < ApplicationController
   end
 
   def booking_params
-    params.require(:booking).permit(:start_date, :end_date, :total_price) 
+    params.require(:booking).permit(:start_date, :end_date, :total_price)
   end
 end
