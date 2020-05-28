@@ -4,11 +4,6 @@
   <% if user_signed_in? %>
   <p>Here are your bookings:</p>
 
-<<<<<<< HEAD
-=======
-    <p class="text-right mt-5">Edit this booking <span><%= link_to "<i class='fas fa-pencil-alt'></i>".html_safe, dashboard_index_path %></span></p>
-    <p class="text-right mt-5">Delete this booking <span><%= link_to "<i class='far fa-trash-alt'></i>".html_safe,  dashboard_index_path, method: :delete, data: {confirm: 'Are you sure?'} %></span></p>
->>>>>>> 5224605700f825c728a571a776e21a9422b4516d
   <div class="row card-group">
     <% @my_bookings = @bookings.select do |booking| %>
     <% booking.user == current_user %>
@@ -16,7 +11,7 @@
     <% @my_bookings.each do |my_booking| %>
     <div class="col-4 mb-3">
       <div class="card" style="width: 18rem;">
-        <div class="card-category_pic" style="background-image: url('<%= cl_image_path @bike.photos.first.key %>')">
+        <div class="card-category_pic" style="background-image: url('<%= cl_image_path my_booking.bike.photos.first.key %>')">
         </div>
         <div class="card-body">
           <h5 class="card-title"><%= my_booking.bike.title %></h5>
@@ -24,13 +19,10 @@
           <ul class="list-group list-group-flush">
             <li class="list-group-item">Start Date: <%= my_booking.start_date %></li>
             <li class="list-group-item">End Date: <%= my_booking.end_date %></li>
-<<<<<<< HEAD
             <li class="list-group-item">Total Price: $<%= my_booking.total_price %></li>
             <li><p class="text-right mt-5">Edit this booking <span><%= link_to "<i class='fas fa-pencil-alt'></i>".html_safe, dashboard_index_path %></span></p></li>
             <li><p class="text-right">Delete this booking <span><%= link_to "<i class='far fa-trash-alt'></i>".html_safe,  booking_path(my_booking), method: :delete, data: {confirm: 'Are you sure?'} %></span></p></li>
-=======
             <li class="list-group-item">Total Price: €<%= my_booking.total_price %></li>
->>>>>>> 5224605700f825c728a571a776e21a9422b4516d
           </ul>
         </div>
       </div>
@@ -38,10 +30,9 @@
     <% end %>
   </div>
   <% else %>
-  <p>Sorry you are not signed- please sign in to see your bookings!</p>
+  <p>Sorry you are not signed in- please sign in to see your bookings!</p>
   <% end %>
-
-
+  
 </div>
 
 
