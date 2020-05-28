@@ -1,7 +1,9 @@
 // Import page-specific CSS files here.
 @import "home";
+@import "show";
 
 .card-group {
   width: 100%;
   height: auto;
-    }
+  font-family: 'Montserrat', sans-serif;
+}
