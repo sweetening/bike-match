@@ -1,6 +1,8 @@
-<div class="container">
+<div class="container mt-5">
   <h1 class="title">Make new booking</h1>
   <%=  render 'form' %>
 
-  <%= link_to 'Back', bike_path(@bike) %>
+  <div class= "m-3">
+  <%= link_to 'Back', bikes_path(@bike), class: "btn btn-primary" %>
+  </div>
 </div>
