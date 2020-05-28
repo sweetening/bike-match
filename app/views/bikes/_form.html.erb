@@ -5,7 +5,7 @@
     <%= f.input :location %>
     <%= f.input :address %>
     <%= f.input :price %>
-    <%= f.input :image_url %>
+    <%= f.input :photos, as: :file, input_html: { multiple: true } %>
     <%= f.submit "Add bike", class: "btn btn-primary" %>
   <% end %>
 </div>
