@@ -3,6 +3,9 @@
 
   <% if user_signed_in? %>
   <p>Here are your bookings:</p>
+
+    <p class="text-right mt-5">Edit this booking <span><%= link_to "<i class='fas fa-pencil-alt'></i>".html_safe, dashboard_index_path %></span></p>
+    <p class="text-right mt-5">Delete this booking <span><%= link_to "<i class='far fa-trash-alt'></i>".html_safe,  dashboard_index_path, method: :delete, data: {confirm: 'Are you sure?'} %></span></p>
   <div class="row card-group">
     <% @my_bookings = @bookings.select do |booking| %>
     <% booking.user == current_user %>
