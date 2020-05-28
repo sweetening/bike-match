@@ -1,11 +1,10 @@
-<div class= box>
-<div class="container mt-5" >
+<div class="container mt-5 text-center" >
   <h1 class="title">Booking Confirmation</h1>
-    
+  <p>Thanks for booking with Bike Match!</p>
+  <div class="mt-5">
     <p>Start Date is:   <%= @booking.start_date %></p>
     <p>End Date is:     <%= @booking.end_date %></p>
     <p>Open Balance:    <%= number_to_currency @booking.total_price %></p>
-  
- <%= link_to "See all your bookings 🚲", dashboard_index_path(@bike), class: "btn btn-primary" %>
-</div>
+  </div>
+  <%= link_to "See all your bookings", dashboard_index_path(@bike), class: "btn btn-outline-primary" %>
 </div>
