@@ -4,7 +4,7 @@
     <%= f.input :category, collection: ["Dutch", "Electric", "Racing", "BMX", "Road", "Mountain", "Tandem", "Cruiser", "Single Speed", "Track"] %>
     <%= f.input :location %>
     <%= f.input :price %>
-    <%= f.input :image_url %>
+    <%= f.input :photos, as: :file, input_html: { multiple: true } %>
     <%= f.submit "Add bike", class: "btn btn-primary" %>
   <% end %>
 </div>
