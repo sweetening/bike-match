@@ -1,5 +1,5 @@
 class BikesController < ApplicationController
-  before_action :set_bike, only: [:show, :edit, :update, :delete]
+  before_action :set_bike, only: [:show, :edit, :update, :destroy]
 
   def index
     @bikes = Bike.all
@@ -31,9 +31,10 @@ class BikesController < ApplicationController
     end
   end
 
-  def delete
+  def destroy
+    @bike = Bike.find(params[:id])
     @bike.destroy
-    redirect_to bikes_path
+    redirect_to bikes_path, notice: 'The bike was successfully destroyed.'
   end
 
   private
