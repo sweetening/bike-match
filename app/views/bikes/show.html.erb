@@ -1,9 +1,36 @@
 <div class="container">
     <p class="text-right mt-5">Edit this bike <span><%= link_to "<i class='fas fa-pencil-alt'></i>".html_safe, edit_bike_path %></span></p>
-    <p class="text-right mt-5">Delete this bike <span><%= link_to "<i class='far fa-trash-alt'></i>".html_safe, bike_path, method: :delete, data: {confirm: 'Are you sure?'} %></span></p>
+    <p class="text-right">Delete this bike <span><%= link_to "<i class='far fa-trash-alt'></i>".html_safe, bike_path, method: :delete, data: {confirm: 'Are you sure?'} %></span></p>
   <div class="d-flex justify-content-center align-items-center">
     <div class="card mt-2" style="width: 18rem;">
-      <div class="card-category_pic" style="background-image: url('<%= cl_image_path @bike.photos.first.key %>')">
+      <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+          <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+        </ol>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <div class="card-category_pic" style="background-image: url('<%= cl_image_path @bike.photos.first.key %>')">
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="card-category_pic" style="background-image: url('<%= cl_image_path @bike.photos.first.key %>')">
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="card-category_pic" style="background-image: url('<%= cl_image_path @bike.photos.first.key %>')">
+            </div>
+          </div>
+        </div>
+        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
       </div>
       <div class="card-body">
         <h5 class="card-title"><%= @bike.title %></h5>
