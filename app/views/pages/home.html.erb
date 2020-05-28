@@ -1,26 +1,31 @@
 <div class="container justify-content-center align-items-center">
-  <h1 class="title m-5">Find Awesome Rides in Your Area...  <span><%= link_to "Start Now!", bikes_path, class: "btn btn-primary" %></span></h1>
+ <form class="form-inline md-form mr-auto mb-4">
+  <input class="form-control mr-sm-2 mt-2" type="text" placeholder="Location" aria-label="Search">
+  <input class="form-control mr-sm-2 mt-2" type="text" placeholder="Start Date" aria-label="Search">
+  <input class="form-control mr-sm-2 mt-2" type="text" placeholder="End Date" aria-label="Search">
+  <button class="btn btn-outline-primary btn-rounded btn-sm my-0" type="submit"><%= link_to "Search", bikes_path, class: "nav-link" %></button>
+  </form>
   <div class="card-group">
-  <div class="card m-2">
-    <img src="https://images.pexels.com/photos/2591990/pexels-photo-2591990.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" class="card-img-top" alt="...">
-    <div class="card-body">
-      <h5 class="card-title">Mountain bike</h5>
-      <p class="card-text">Berlin Kreuzberg - 12€ - Available now</p>
+    <div class="card m-2">
+      <img src="https://images.pexels.com/photos/2591990/pexels-photo-2591990.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">Mountain bike</h5>
+        <p class="card-text">Berlin Kreuzberg - 12€ - Available now</p>
+      </div>
+    </div>
+    <div class="card m-2">
+      <img src="https://images.pexels.com/photos/957157/pexels-photo-957157.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">Cargo bike</h5>
+        <p class="card-text">Berlin Neukölln - 20€ - Available now</p>
+      </div>
+    </div>
+    <div class="card m-2">
+      <img src="https://images.pexels.com/photos/545004/pexels-photo-545004.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">Road bike</h5>
+        <p class="card-text">Berlin Mitte - 10€ - Available now</p>
+      </div>
     </div>
   </div>
-  <div class="card m-2">
-    <img src="https://images.pexels.com/photos/957157/pexels-photo-957157.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" class="card-img-top" alt="...">
-    <div class="card-body">
-      <h5 class="card-title">Cargo bike</h5>
-      <p class="card-text">Berlin Neukölln - 20€ - Available now</p>
-    </div>
-  </div>
-  <div class="card m-2">
-    <img src="https://images.pexels.com/photos/545004/pexels-photo-545004.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" class="card-img-top" alt="...">
-    <div class="card-body">
-      <h5 class="card-title">Road bike</h5>
-      <p class="card-text">Berlin Mitte - 10€ - Available now</p>
-    </div>
-  </div>
-</div>
 </div>

@@ -13,8 +13,9 @@
 
   <body>
     <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
-      <a class="navbar-brand" href="#">
-        <img src="https://static.thenounproject.com/png/1026671-200.png" />
+      <!-- This link is for the bike icon may need to change not sure it works on heroku -->
+      <a class="navbar-brand" href="/">
+        <img style="width: 40px" src="https://static.thenounproject.com/png/1026671-200.png" />
       </a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -24,10 +25,7 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item active">
-            <%= link_to "Bike Match", root_path, class: "nav-link title" %>
-          </li>
-          <li class="nav-item active">
-            <%= link_to "Home", root_path, class: "nav-link" %>
+            <%= link_to "Bike Match", root_path, class: "nav-link" %>
           </li>
           <li class="nav-item">
             <%= link_to "Bikes", bikes_path, class: "nav-link" %>
@@ -39,7 +37,7 @@
             <img class="avatar dropdown-toggle" id="navbarDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" src="https://thumbor.forbes.com/thumbor/fit-in/416x416/filters%3Aformat%28jpg%29/https%3A%2F%2Fspecials-images.forbesimg.com%2Fimageserve%2F5e6e696937d0440006bc7c4c%2F0x0.jpg%3Fbackground%3D000000%26cropX1%3D0%26cropX2%3D3430%26cropY1%3D103%26cropY2%3D3535" />
             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                <%= link_to "sign in", new_user_session_path, class: "dropdown-item" %>
-               <%= link_to "sign out", destroy_user_session_path, class: "dropdown-item" %>
+               <%= link_to "sign out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
             </div>
           </li>
         </ul>
@@ -48,7 +46,8 @@
 
     <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.pexels.com/photos/163704/bike-old-wheel-two-wheeled-vehicle-163704.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500);">
     <div class="container">
-      <h1>Whatever your need is, find a bike that fits you!</h1>
+      <h1 id="banner-text">Bike Match</h1>
+      <h1 id="banner-text">Whatever your need is, find a bike that fits you!</h1>
     </div>
     </div>
 
