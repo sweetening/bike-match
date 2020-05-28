@@ -4,6 +4,6 @@ Rails.application.routes.draw do
   resources :bikes, only: [:new, :create, :index, :show, :edit, :update] do
    resources :bookings, only: [:new, :create, :edit, :update, :show]
  end
-  resources :bookings, only: [:delete]
+  resources :bookings, only: [:destroy]
   resources :dashboard, only: [:index]
 end

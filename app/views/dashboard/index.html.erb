@@ -3,6 +3,7 @@
 
   <% if user_signed_in? %>
   <p>Here are your bookings:</p>
+
   <div class="row card-group">
     <% @my_bookings = @bookings.select do |booking| %>
     <% booking.user == current_user %>
@@ -19,6 +20,8 @@
             <li class="list-group-item">Start Date: <%= my_booking.start_date %></li>
             <li class="list-group-item">End Date: <%= my_booking.end_date %></li>
             <li class="list-group-item">Total Price: $<%= my_booking.total_price %></li>
+            <li><p class="text-right mt-5">Edit this booking <span><%= link_to "<i class='fas fa-pencil-alt'></i>".html_safe, dashboard_index_path %></span></p></li>
+            <li><p class="text-right">Delete this booking <span><%= link_to "<i class='far fa-trash-alt'></i>".html_safe,  booking_path(my_booking), method: :delete, data: {confirm: 'Are you sure?'} %></span></p></li>
           </ul>
         </div>
       </div>
