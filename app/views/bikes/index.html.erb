@@ -5,13 +5,13 @@
     <% @bikes.each do |bike| %>
       <div class="col-4">
         <div class="card m-2" style="width: 18rem;">
-          <div class="card-category_pic" style="background-image: url(<%= bike.image_url %>)">
+          <div class="card-category_pic" style="background-image: url('<%= cl_image_path @bike.photos.first.key %>')">
           </div>
           <div class="card-body">
             <h5 class="card-title"><%= link_to bike.title, bike_path(bike) %></h5>
             <p class="card-text">Bike Category: <%= bike.category %></p>
             <p class="card-text">Location: <%= bike.location %></p>
-            <p class="card-text">Price: $<%= bike.price %></p>
+            <p class="card-text">Price: €<%= bike.price %></p>
             <p class="card-text"><small class="text-muted">bike-match ❤️</small></p>
           </div>
         </div>
