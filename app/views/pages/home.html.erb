@@ -1,8 +1,22 @@
-<div class="container justify-content-center align-items-center">
- <form class="form-inline md-form mr-auto mb-4">
-  <input class="form-control mr-sm-2 mt-2" type="text" placeholder="Location" aria-label="Search">
-  <button class="btn btn-outline-primary rounded-pill btn-sm my-0 mt-2" type="submit"><%= link_to "Search", bikes_path, class: "nav-link" %></button>
-  </form>
+<div class="container mt-5">
+  <h1 class="title text-center">Find A Bike Near You!</h1>
+  <div class= "d-flex justify-content-center align-items-center my-3">
+    <form class="form-inline">
+      <div class="form-group mx-sm-3 mb-2">
+        <label for="inputPassword2" class="sr-only">Location</label>
+        <input type="password" class="form-control" id="inputPassword2" placeholder="Location">
+      </div>
+      <button type="submit" class="btn btn-outline-primary mb-2">Search</button>
+    </form>
+  </div>
+<!-- Old HTML Sanja see if okay to replace? -->
+  <!-- <div>
+   <form class="form-inline md-form mr-auto mb-4">
+      <input class="form-control mr-sm-2 mt-2" type="text" placeholder="Location" aria-label="Search">
+      <%= link_to 'Search', bikes_path, class: "btn btn-outline-primary" %>
+    </form>
+  </div> -->
+
   <div class="card-group">
     <div class="card m-2">
       <img src="https://images.pexels.com/photos/2591990/pexels-photo-2591990.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" class="card-img-top" alt="...">

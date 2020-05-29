@@ -24,7 +24,9 @@ class BookingsController < ApplicationController
     end
   end
 
-  def edit; end
+  def edit
+    @booking = Booking.find(params[:id])
+  end
 
   def update
     @bike = Bike.find(params[:bike_id])
