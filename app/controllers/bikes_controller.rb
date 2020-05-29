@@ -2,6 +2,12 @@ class BikesController < ApplicationController
   before_action :set_bike, only: [:show, :edit, :update, :destroy, :address]
 
   def index
+    if params[:query].present?
+      @bikes = Bike.where(title: params[:query])
+    else
+      @bikes = Bike.all
+    end
+
     @bikes= Bike.geocoded # returns flats with coordinates
 
     @markers = @bikes.map do |bike|
