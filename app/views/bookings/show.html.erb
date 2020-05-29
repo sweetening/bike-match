@@ -4,7 +4,7 @@
   <div class="mt-5">
     <p>Start Date is:   <%= @booking.start_date %></p>
     <p>End Date is:     <%= @booking.end_date %></p>
-    <p>Open Balance:    <%= number_to_currency @booking.total_price %></p>
+    <p>Open Balance:    €<%= @booking.total_price %></p>
   </div>
   <%= link_to "See all your bookings", dashboard_index_path(@bike), class: "btn btn-outline-primary" %>
 </div>

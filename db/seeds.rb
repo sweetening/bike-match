@@ -1,10 +1,4 @@
-require 'faker'
 
-puts 'clean db'
-Booking.destroy_all
-Bike.destroy_all
-User.destroy_all
-puts 'db is now clean'
 
 # puts 'creating users...'
 # 10.times do
@@ -44,4 +38,5 @@ puts 'db is now clean'
 # end
 
 # puts 'created 10 booking'
+
 
