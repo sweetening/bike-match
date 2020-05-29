@@ -2,8 +2,9 @@
   <h1 class="title">Dashboard</h1>
 
   <% if user_signed_in? %>
-  <p>Here are your bookings:</p>
-
+  <div class="mt-3 mb-5">
+    <p class="text-center">Here are your bookings:</p>
+  </div>
   <div class="row card-group">
     <% @my_bookings = @bookings.select do |booking| %>
     <% booking.user == current_user %>
@@ -32,7 +33,6 @@
   <% else %>
   <p>Sorry you are not signed in- please sign in to see your bookings!</p>
   <% end %>
-
 </div>
 
 
