@@ -1,9 +1,14 @@
-<div class="container mt-5">
+<div class="container mt-5" style="align-items: center;">
   <h1 class="title">Bikes</h1>
   <p class="text-right">add a bike <span><%= link_to "<i class='fas fa-plus'></i>".html_safe, new_bike_path %></span></p>
+  <div class="m-5" id="map"
+    style="width: 90%; height:500px;"
+    data-markers="<%= @markers.to_json %>"
+    data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+  </div>
   <div class="row card-group">
     <% @bikes.each do |bike| %>
-    <div class="col-sm">
+    <div class="col-4">
       <div class="card m-2" style="width: 16rem;">
         <div id="<%= 'carousel' + bike.id.to_s %>" class="carousel slide" data-ride="carousel" data-interval="10000">
           <ol class="carousel-indicators">
@@ -38,12 +43,5 @@
       </div>
     </div>
     <% end %>
-    <div class="col-xl">
-      <div id="map"
-      style="width: 160%; height:500px;"
-      data-markers="<%= @markers.to_json %>"
-      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
-    </div>
   </div>
-</div>
 </div>
