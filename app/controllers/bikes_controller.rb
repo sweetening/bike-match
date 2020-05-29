@@ -19,7 +19,14 @@ class BikesController < ApplicationController
     end
   end
 
-  def show; end
+  def show
+    @markers =
+      [{
+        lat: @bike.latitude,
+        lng: @bike.longitude,
+        infoWindow: render_to_string(partial: "info_window", locals: { bike: @bike })
+      }]
+  end
 
   def new
     @bike = Bike.new
