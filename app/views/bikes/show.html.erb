@@ -40,25 +40,31 @@
       </div>
     </div>
   </div>
-  <h2 class="title text-center my-5">Reviews For <%= @bike.title %></h2>
-  <ul>
-    <% @bike.reviews.each do |review| %>
-      <li>
-        <div class="card mt-3">
-          <div class="card-header">
-            <% review.rating.to_i.times do  %>
-             <span class="star"><i class="fas fa-star"></i></span>
-            <% end %>
-          </div>
-          <div class="card-body">
-            <blockquote class="blockquote mb-0">
-              <p><%= review.content %></p>
-              <footer class="blockquote-footer"><%= @bike.title %> Customer</footer>
-            </blockquote>
-          </div>
-        </div>
-      </li>
-    <% end %>
-  </ul>
-
+  <div id="reviews">
+    <h2 class="title text-center my-5">Reviews For <%= @bike.title %></h2>
+    <% if @bike.reviews.blank? %>
+      <p>Be the first to leave a review for <%= @bike.title %></p>
+    <% else %>
+      <ul>
+        <% @bike.reviews.each do |review| %>
+          <li id="review- <%= review.id %>">
+            <div class="card mt-3">
+              <div class="card-header">
+                <% review.rating.to_i.times do  %>
+                  <span class="star"><i class="fas fa-star"></i></span>
+                <% end %>
+              </div>
+              <div class="card-body">
+                <blockquote class="blockquote mb-0">
+                  <p><%= review.content %></p>
+                  <footer class="blockquote-footer"><%= @bike.title %> Customer</footer>
+                </blockquote>
+              </div>
+            </div>
+          </li>
+        <% end %>
+      </ul>
+  <% end %>
+  </div>
 </div>
+

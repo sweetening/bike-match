@@ -11,10 +11,10 @@ class ReviewsController < ApplicationController
     @review.booking = @booking
     if @review.save
       # success
-      redirect_to bike_path(@booking.bike_id)
+      redirect_to bike_path(@booking.bike_id, anchor: "review-#{@review.id}")
     else
       # failure
-      render :new
+      render 'bikes/show'
     end
   end
 
